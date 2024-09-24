@@ -1,0 +1,8 @@
+numpy
+pandas
+typer
+rich
+sentence-transformers
+fastdtw
+scipy
+seaborn
