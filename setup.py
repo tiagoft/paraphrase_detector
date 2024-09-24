@@ -15,8 +15,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 MODULE_SLUG = "paraphrase_detector"
 
 setup(
-    name=MODULE_SLUG = "paraphrase_detector"
-,  # Substitua pelo nome do seu pacote
+    name=MODULE_SLUG,  # Substitua pelo nome do seu pacote
     version="0.1.0",
     author="Tiago Tavares",
     author_email="tiagoft@gmail.com",
