@@ -13,7 +13,7 @@ def extract_from_json(json_file : str,
     output_dir = Path(output_dir)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    df = pd.read_json(json_file)
+    df = pd.read_json(json_file, lines=True)
     model = paraphrase_detector.get_model()
     for i in tqdm(range(len(df))):
         if key is None:
@@ -24,7 +24,8 @@ def extract_from_json(json_file : str,
         if os.path.exists(full_fname):
             continue
         text = df.loc[i, content]
-        embeddings = paraphrase_detector.get_embeddings_from_text(model, text)
+        sentences = paraphrase_detector.get_sentences_from_text(text)
+        embeddings = paraphrase_detector.get_embeddings_from_sentences(model, sentences)
         with open(full_fname, 'wb') as f:
             np.save(f, embeddings)
     return

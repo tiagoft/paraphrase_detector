@@ -24,8 +24,8 @@ def print_info(custom_message : str = ""):
     Print information about the module
     """
     console.print("Hello! I am Paraphrase Detector")
-    console.print(f"Author: { Paraphrase Detector.__author__}")
-    console.print(f"Version: { Paraphrase Detector.__version__}")
+    console.print(f"Author: { paraphrase_detector.__author__}")
+    console.print(f"Version: { paraphrase_detector.__version__}")
     if custom_message != "":
         console.print(f"Custom message: {custom_message}")
 
@@ -35,7 +35,7 @@ def run():
     Probably run the main function of the module
     """
     print("Hello world!")
-    Paraphrase Detector.my_function()
+    paraphrase_detector.my_function()
     script_path = Path(os.path.abspath(__file__))
     parent_path = script_path.parent
     print("Script path:", script_path)
