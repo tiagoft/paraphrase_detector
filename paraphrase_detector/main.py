@@ -1,4 +1,4 @@
-import Paraphrase Detector
+import paraphrase_detector
 import os
 from pathlib import Path
 from rich.console import Console
@@ -6,6 +6,17 @@ import typer
 
 app = typer.Typer(no_args_is_help=True)
 console = Console()
+
+@app.command('extract-json')
+def extract_json(json_file : str,
+                 output_dir : str,
+                 content : str,
+                 key : str = None,
+    ):
+    """
+    Extract embeddings from a JSON file
+    """
+    paraphrase_detector.extract_from_json(json_file, output_dir, content, key)
 
 @app.command('info')
 def print_info(custom_message : str = ""):
